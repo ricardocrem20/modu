@@ -1,0 +1,24 @@
+{
+    "name": "ricardo/modu",
+    "description": "Modularizaci\u0000n",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Ricardo Garcia",
+            "email": "ricardocrem20@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Ricardo\\Modu\\Providers\\ModularizacionServiceProvider"
+            ]
+        }
+    },
+    "autoload": {
+        "psr-4": {
+            "Ricardo\\Modu\\": "src"
+        }
+    }
+}
