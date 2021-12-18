@@ -89,5 +89,16 @@ Si te jala algun error no olvides ejecutar
 ```
 php artisan optimize
 ```
+# Implementación
+En cada función del controlador que necesites darle algun permiso agrege lo siguiente
+```
+Gate::authorize('tieneAcceso', 'slug_del_permiso');
+```
+Las rutas deben de estar dentro de
+```
+Route::group(['middleware' => 'auth:api'], function() {
+  // Routes
+}
+```
 # Licencia
 La licencia del MIT (MIT). Consulte [Archivo de licencia](https://github.com/ricardocrem20/modu/blob/main/LICENSE) para obtener más información.
