@@ -1,20 +1,20 @@
 # Modu, es la modularización inicial de un sistema
 La modularización cuenta con la siguiente estructura
-### Modulos
-Son los modulos principales del sistema.
-### Areas
-Las areas hacen parte de los modulos, y son esas partes mas pequeñas en la estructura del sistema.
+### Módulos
+Son los módulos principales del sistema.
+### Áreas
+Las áreas hacen parte de los módulos, y son esas partes más pequeñas en la estructura del sistema.
 ### Roles
-Los roles son asignados a los usuarios, y tienen permisos asignados a los modulos.
+Los roles son asignados a los usuarios, y tienen permisos asignados a los módulos.
 ### Tipo de roles
 Los roles se pueden categorizar por tipos, de acuerdo a su necesidad.
 ### Permisos
-Los permisos son asignados a los usurios, de acuerdo a las areas que desea asignar.
+Los permisos son asignados a los usuarios, de acuerdo a las áreas que desea asignar.
 ### Usuarios
-Los usuarios padrean tener asignados roles por tipo y modulos, y de acuerdo a los modulos permisos
-a las areas.
+Los usuarios padrean tener asignados roles por tipo y módulos, y de acuerdo a los módulos permisos
+a las áreas.
 # Instalación
-Este paquete necesita tambien la instlación de [Laravel Passport](https://laravel.com/docs/8.x/passport).
+Este paquete necesita también la instalación de [Laravel Passport](https://laravel.com/docs/8.x/passport).
 ```
 composer require ricardocrem20/modu
 ```
@@ -36,7 +36,7 @@ public function boot()
     });
 }
 ```
-2. Ve a la siguiente migración 'database/migrations/####_##_##_create_users_table.php' y debe quedar asi:
+2. Ve a la siguiente migración 'database/migrations/####_##_##_create_users_table.php' y debe quedar así:
 ```
 public function up()
 {
@@ -57,7 +57,7 @@ public function up()
     });
 }
 ```
-3. En el siguiente directorio 'app/Models/User.php' agrege
+3. En el siguiente directorio 'app/Models/User.php' agrega
 ```
 use Ricardo\Modu\Traits\UserTrait;
 ```
@@ -73,7 +73,7 @@ php artisan migrate --seed
 o
 php artisan migrate:fres --seed
 ```
-En la base de datos, debe de averce creado datos, y un usuario que es el siguiente
+En la base de datos, debe de haberse creado datos, y un usuario que es el siguiente
 ```
 user: ricardo@app.io
 password: password 
@@ -85,12 +85,12 @@ php artisan passport:install
 ```
 php artisan storage:link
 ```
-Si te jala algun error no olvides ejecutar
+Si te jala algún error no olvides ejecutar
 ```
 php artisan optimize
 ```
 # Implementación
-En cada función del controlador que necesites darle algun permiso agrege lo siguiente
+En cada función del controlador que necesites darle algún permiso agregue lo siguiente
 ```
 Gate::authorize('tieneAcceso', 'slug_del_permiso');
 ```
